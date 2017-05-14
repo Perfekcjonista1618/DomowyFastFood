@@ -1,0 +1,12 @@
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\DomowyFastFood.exe.config
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\DomowyFastFood.exe
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\DomowyFastFood.pdb
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.Form1.resources
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.Properties.Resources.resources
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.csproj.GenerateResource.Cache
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.exe
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.pdb
