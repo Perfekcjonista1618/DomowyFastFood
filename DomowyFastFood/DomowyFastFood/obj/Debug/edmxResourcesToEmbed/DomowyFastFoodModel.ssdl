@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DomowyFastFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Klient">
+    <Key>
+      <PropertyRef Name="ID_Klienta" />
+    </Key>
+    <Property Name="ID_Klienta" Type="int" Nullable="false" />
+    <Property Name="Nick" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="varchar" MaxLength="50" />
+    <Property Name="Telefon" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Pracownik">
+          <Property Name="ID_Pracownika" Type="int" />
+          <Property Name="Nick" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="Restauracja">
+    <Key>
+      <PropertyRef Name="ID_Restauracji" />
+    </Key>
+    <Property Name="ID_Restauracji" Type="int" Nullable="false" />
+    <Property Name="NazwaRestauracji" Type="nvarchar" MaxLength="50" />
+    <Property Name="DanieDnia" Type="nvarchar(max)" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Zamowienie">
+    <Key>
+      <PropertyRef Name="ID_Zamowienia" />
+    </Key>
+    <Property Name="ID_Zamowienia" Type="int" Nullable="false" />
+    <Property Name="ID_Restauracji" Type="int" Nullable="false" />
+    <Property Name="ID_Klienta" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Zamowienie_Klient">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="ID_Klienta" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="ID_Klienta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zamowienie_Restauracja">
+    <End Role="Restauracja" Type="Self.Restauracja" Multiplicity="1" />
+    <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restauracja">
+        <PropertyRef Name="ID_Restauracji" />
+      </Principal>
+      <Dependent Role="Zamowienie">
+        <PropertyRef Name="ID_Restauracji" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DomowyFastFoodModelStoreContainer">
+    <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restauracja" EntityType="Self.Restauracja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
+      <End Role="Klient" EntitySet="Klient" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zamowienie_Restauracja" Association="Self.FK_Zamowienie_Restauracja">
+      <End Role="Restauracja" EntitySet="Restauracja" />
+      <End Role="Zamowienie" EntitySet="Zamowienie" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

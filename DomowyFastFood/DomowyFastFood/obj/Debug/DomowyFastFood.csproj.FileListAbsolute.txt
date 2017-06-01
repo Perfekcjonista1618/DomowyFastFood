@@ -10,3 +10,6 @@ C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.csproj.GenerateResource.Cache
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.exe
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.pdb
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmAdminControlPanel.resources
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmLogIn.resources
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmUserControlPanel.resources
