@@ -17,6 +17,6 @@ namespace DomowyFastFood
         public int ID_Pracownika { get; set; }
         public string Nick { get; set; }
         public string Password { get; set; }
-        public string Autoryzacja { get; set; }
+        public int Autoryzacja { get; set; }
     }
 }

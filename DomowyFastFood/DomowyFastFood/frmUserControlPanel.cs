@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DomowyFastFood
 {
-    public partial class UserControlPanel : Form
+    public partial class frmUserControlPanel : Form
     {
-        public UserControlPanel()
+        public frmUserControlPanel()
         {
             InitializeComponent();
         }

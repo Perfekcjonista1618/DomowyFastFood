@@ -1,6 +1,6 @@
 ﻿namespace DomowyFastFood
 {
-    partial class UserControlPanel
+    partial class frmUserControlPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRestaurant = new System.Windows.Forms.DataGridView();
             this.domowyFastFoodDataSet1 = new DomowyFastFood.DomowyFastFoodDataSet1();
             this.restauracjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.restauracjaTableAdapter = new DomowyFastFood.DomowyFastFoodDataSet1TableAdapters.RestauracjaTableAdapter();
@@ -40,28 +40,28 @@
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnSync = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSyncTitle = new System.Windows.Forms.Label();
             this.lblSyncInfo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvRestaurant
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRestaurant.AutoGenerateColumns = false;
+            this.dgvRestaurant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRestaurant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDRestauracjiDataGridViewTextBoxColumn,
             this.nazwaRestauracjiDataGridViewTextBoxColumn,
             this.danieDniaDataGridViewTextBoxColumn,
             this.adresDataGridViewTextBoxColumn,
             this.telefonDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.restauracjaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(441, 271);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvRestaurant.DataSource = this.restauracjaBindingSource;
+            this.dgvRestaurant.Location = new System.Drawing.Point(12, 12);
+            this.dgvRestaurant.Name = "dgvRestaurant";
+            this.dgvRestaurant.Size = new System.Drawing.Size(441, 271);
+            this.dgvRestaurant.TabIndex = 0;
             // 
             // domowyFastFoodDataSet1
             // 
@@ -126,14 +126,14 @@
             this.btnSync.Text = "Synchronizuj";
             this.btnSync.UseVisualStyleBackColor = true;
             // 
-            // lblTitle
+            // lblSyncTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(12, 314);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(124, 13);
-            this.lblTitle.TabIndex = 3;
-            this.lblTitle.Text = "Ostatnia Synchronizacja:";
+            this.lblSyncTitle.AutoSize = true;
+            this.lblSyncTitle.Location = new System.Drawing.Point(12, 314);
+            this.lblSyncTitle.Name = "lblSyncTitle";
+            this.lblSyncTitle.Size = new System.Drawing.Size(124, 13);
+            this.lblSyncTitle.TabIndex = 3;
+            this.lblSyncTitle.Text = "Ostatnia Synchronizacja:";
             // 
             // lblSyncInfo
             // 
@@ -150,14 +150,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 361);
             this.Controls.Add(this.lblSyncInfo);
-            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblSyncTitle);
             this.Controls.Add(this.btnSync);
             this.Controls.Add(this.btnOrder);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRestaurant);
             this.Name = "UserControlPanel";
-            this.Text = "UserControlPanel";
+            this.Text = "Domowy Fast Food";
             this.Load += new System.EventHandler(this.UserControlPanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -167,7 +167,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRestaurant;
         private DomowyFastFoodDataSet1 domowyFastFoodDataSet1;
         private System.Windows.Forms.BindingSource restauracjaBindingSource;
         private DomowyFastFoodDataSet1TableAdapters.RestauracjaTableAdapter restauracjaTableAdapter;
@@ -178,7 +178,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnSync;
-        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblSyncTitle;
         private System.Windows.Forms.Label lblSyncInfo;
     }
 }

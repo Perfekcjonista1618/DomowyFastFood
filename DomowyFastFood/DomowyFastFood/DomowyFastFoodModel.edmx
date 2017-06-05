@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DomowyFastFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DomowyFastFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Klient">
           <Key>
             <PropertyRef Name="ID_Klienta" />
@@ -15,14 +15,19 @@
           <Property Name="Adres" Type="varchar" MaxLength="50" />
           <Property Name="Telefon" Type="varchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Pracownik">
           <Key>
             <PropertyRef Name="ID_Pracownika" />
+            <PropertyRef Name="Nick" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="Autoryzacja" />
           </Key>
           <Property Name="ID_Pracownika" Type="int" Nullable="false" />
           <Property Name="Nick" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Autoryzacja" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Autoryzacja" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Restauracja">
           <Key>
@@ -78,10 +83,17 @@
         </Association>
         <EntityContainer Name="DomowyFastFoodModelStoreContainer">
           <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Pracownik" EntityType="Self.Pracownik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Restauracja" EntityType="Self.Restauracja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracownik" EntityType="Self.Pracownik" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pracownik].[ID_Pracownika] AS [ID_Pracownika], 
+    [Pracownik].[Nick] AS [Nick], 
+    [Pracownik].[Password] AS [Password], 
+    [Pracownik].[Autoryzacja] AS [Autoryzacja]
+    FROM [dbo].[Pracownik] AS [Pracownik]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
             <End Role="Klient" EntitySet="Klient" />
             <End Role="Zamowienie" EntitySet="Zamowienie" />
@@ -91,7 +103,8 @@
             <End Role="Zamowienie" EntitySet="Zamowienie" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DomowyFastFoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -137,6 +150,18 @@
           <NavigationProperty Name="Klient" Relationship="Self.FK_Zamowienie_Klient" FromRole="Zamowienie" ToRole="Klient" />
           <NavigationProperty Name="Restauracja" Relationship="Self.FK_Zamowienie_Restauracja" FromRole="Zamowienie" ToRole="Restauracja" />
         </EntityType>
+        <EntityType Name="Pracownik">
+          <Key>
+            <PropertyRef Name="ID_Pracownika" />
+            <PropertyRef Name="Nick" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="Autoryzacja" />
+          </Key>
+          <Property Name="ID_Pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Nick" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Autoryzacja" Type="Int32" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Zamowienie_Klient">
           <End Role="Klient" Type="Self.Klient" Multiplicity="1" />
           <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
@@ -166,6 +191,7 @@
           <EntitySet Name="Restauracjas" EntityType="Self.Restauracja" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Zamowienies" EntityType="Self.Zamowienie" />
+          <EntitySet Name="Pracowniks" EntityType="Self.Pracownik" />
           <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
             <End Role="Klient" EntitySet="Klients" />
             <End Role="Zamowienie" EntitySet="Zamowienies" />
@@ -174,17 +200,7 @@
             <End Role="Restauracja" EntitySet="Restauracjas" />
             <End Role="Zamowienie" EntitySet="Zamowienies" />
           </AssociationSet>
-          <EntitySet Name="Pracowniks" EntityType="DomowyFastFoodModel.Pracownik" />
         </EntityContainer>
-        <EntityType Name="Pracownik">
-          <Key>
-            <PropertyRef Name="ID_Pracownika" />
-          </Key>
-          <Property Name="ID_Pracownika" Type="Int32" Nullable="false" />
-          <Property Name="Nick" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Autoryzacja" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -236,10 +252,10 @@
           <EntitySetMapping Name="Pracowniks">
             <EntityTypeMapping TypeName="DomowyFastFoodModel.Pracownik">
               <MappingFragment StoreEntitySet="Pracownik">
-                <ScalarProperty Name="Autoryzacja" ColumnName="Autoryzacja" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Nick" ColumnName="Nick" />
                 <ScalarProperty Name="ID_Pracownika" ColumnName="ID_Pracownika" />
+                <ScalarProperty Name="Nick" ColumnName="Nick" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Autoryzacja" ColumnName="Autoryzacja" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

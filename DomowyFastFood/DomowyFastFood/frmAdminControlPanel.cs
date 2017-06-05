@@ -12,8 +12,10 @@ namespace DomowyFastFood
 {
     public partial class frmAdminControlPanel : Form
     {
-        public frmAdminControlPanel()
+        public int _Authorization{ get; set; }
+        public frmAdminControlPanel(int Authorization)
         {
+            Authorization = _Authorization;
             InitializeComponent();
         }
 
