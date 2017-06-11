@@ -43,5 +43,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Pracowniks">
+      <EntityTypeMapping TypeName="DomowyFastFoodModel.Pracownik">
+        <MappingFragment StoreEntitySet="Pracownik">
+          <ScalarProperty Name="ID_Pracownika" ColumnName="ID_Pracownika" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Autoryzacja" ColumnName="Autoryzacja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

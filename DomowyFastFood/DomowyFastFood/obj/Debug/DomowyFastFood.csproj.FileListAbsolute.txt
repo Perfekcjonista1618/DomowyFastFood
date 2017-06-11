@@ -5,7 +5,6 @@ C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\HtmlAgilityPack.xml
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.csprojResolveAssemblyReference.cache
-C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.Form1.resources
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.Properties.Resources.resources
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.csproj.GenerateResource.Cache
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.exe
@@ -13,3 +12,9 @@ C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmAdminControlPanel.resources
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmLogIn.resources
 C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmUserControlPanel.resources
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\EntityFramework.dll
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\EntityFramework.xml
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jacek\Documents\GitHub\DomowyFastFood\DomowyFastFood\DomowyFastFood\obj\Debug\DomowyFastFood.frmRegister.resources

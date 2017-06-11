@@ -12,7 +12,8 @@ namespace DomowyFastFood
 {
     public partial class frmLogIn : Form
     {
-        public int _Authorization { get; set; }
+        public int Authorization { get; set; }
+        public string Identity { get; set; }
 
         public frmLogIn()
         {
@@ -32,15 +33,17 @@ namespace DomowyFastFood
                 if (Context.Klients.AsParallel().Where(x => x.Nick == txtBoxLogin.Text).Count() > 0
                     && Context.Klients.AsParallel().Where(x => x.Password == txtBoxPassword.Text).Count() > 0)
                 {
-                    frmUserControlPanel r = new frmUserControlPanel();
-                    r.Show();
+                    Identity = txtBoxLogin.Text;
+                    frmUserControlPanel f = new frmUserControlPanel(Identity);
+                    f.Show();
                 }
                 else if (Context.Pracowniks.AsParallel().Where(x => x.Nick == txtBoxLogin.Text).Count() > 0
                     && Context.Pracowniks.AsParallel().Where(x => x.Password == txtBoxPassword.Text).Count() > 0)
                 {
-                    _Authorization = Context.Pracowniks.AsParallel().Where(x => x.Nick == txtBoxLogin.Text).FirstOrDefault().Autoryzacja;
-                    frmAdminControlPanel r = new frmAdminControlPanel(_Authorization);
-                    r.Show();
+                    Authorization = Context.Pracowniks.AsParallel().Where(x => x.Nick == txtBoxLogin.Text).FirstOrDefault().Autoryzacja;
+                    Identity = txtBoxLogin.Text;
+                    frmAdminControlPanel f = new frmAdminControlPanel(Authorization, Identity);
+                    f.Show();
                 }
                 else MessageBox.Show("Błąd Logowania", "Niepoprawny login lub hasło", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

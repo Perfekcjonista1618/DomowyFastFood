@@ -26,7 +26,19 @@ namespace DomowyFastFood
         {
             try
             {
-
+                using (DomowyFastFoodContext Context = new DomowyFastFoodContext())
+                {
+                    Context.Klients.Add(new Klient
+                    {
+                        ID_Klienta = Context.Klients.Max(x => x.ID_Klienta) + 1,
+                        Nick = txtboxNick.Text,
+                        Password = txtboxPassword.Text,
+                        Adres = txtboxAdress.Text,
+                        Telefon = txtboxPhone.Text
+                    });
+                    Context.SaveChanges();
+                    Close();
+                }
             }
             catch (Exception ex)
             {

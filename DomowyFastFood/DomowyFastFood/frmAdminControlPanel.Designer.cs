@@ -30,12 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.iDZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zamowienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.domowyFastFoodDataSet = new DomowyFastFood.DomowyFastFoodDataSet();
             this.zamowienieTableAdapter = new DomowyFastFood.DomowyFastFoodDataSetTableAdapters.ZamowienieTableAdapter();
+            this.btnDelOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowienieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet)).BeginInit();
@@ -43,35 +41,15 @@
             // 
             // dgvOrder
             // 
-            this.dgvOrder.AutoGenerateColumns = false;
+            this.dgvOrder.AllowUserToAddRows = false;
+            this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDZamowieniaDataGridViewTextBoxColumn,
-            this.iDRestauracjiDataGridViewTextBoxColumn,
-            this.iDKlientaDataGridViewTextBoxColumn});
-            this.dgvOrder.DataSource = this.zamowienieBindingSource;
             this.dgvOrder.Location = new System.Drawing.Point(12, 12);
             this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.Size = new System.Drawing.Size(342, 190);
+            this.dgvOrder.ReadOnly = true;
+            this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrder.Size = new System.Drawing.Size(634, 190);
             this.dgvOrder.TabIndex = 0;
-            // 
-            // iDZamowieniaDataGridViewTextBoxColumn
-            // 
-            this.iDZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "ID_Zamowienia";
-            this.iDZamowieniaDataGridViewTextBoxColumn.HeaderText = "ID_Zamowienia";
-            this.iDZamowieniaDataGridViewTextBoxColumn.Name = "iDZamowieniaDataGridViewTextBoxColumn";
-            // 
-            // iDRestauracjiDataGridViewTextBoxColumn
-            // 
-            this.iDRestauracjiDataGridViewTextBoxColumn.DataPropertyName = "ID_Restauracji";
-            this.iDRestauracjiDataGridViewTextBoxColumn.HeaderText = "ID_Restauracji";
-            this.iDRestauracjiDataGridViewTextBoxColumn.Name = "iDRestauracjiDataGridViewTextBoxColumn";
-            // 
-            // iDKlientaDataGridViewTextBoxColumn
-            // 
-            this.iDKlientaDataGridViewTextBoxColumn.DataPropertyName = "ID_Klienta";
-            this.iDKlientaDataGridViewTextBoxColumn.HeaderText = "ID_Klienta";
-            this.iDKlientaDataGridViewTextBoxColumn.Name = "iDKlientaDataGridViewTextBoxColumn";
             // 
             // zamowienieBindingSource
             // 
@@ -87,11 +65,22 @@
             // 
             this.zamowienieTableAdapter.ClearBeforeFill = true;
             // 
+            // btnDelOrder
+            // 
+            this.btnDelOrder.Location = new System.Drawing.Point(282, 239);
+            this.btnDelOrder.Name = "btnDelOrder";
+            this.btnDelOrder.Size = new System.Drawing.Size(105, 30);
+            this.btnDelOrder.TabIndex = 1;
+            this.btnDelOrder.Text = "Usun zamowienie";
+            this.btnDelOrder.UseVisualStyleBackColor = true;
+            this.btnDelOrder.Click += new System.EventHandler(this.btnDelOrder_Click);
+            // 
             // frmAdminControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 301);
+            this.ClientSize = new System.Drawing.Size(658, 301);
+            this.Controls.Add(this.btnDelOrder);
             this.Controls.Add(this.dgvOrder);
             this.Name = "frmAdminControlPanel";
             this.Text = "frmAdminControlPanel";
@@ -109,8 +98,6 @@
         private DomowyFastFoodDataSet domowyFastFoodDataSet;
         private System.Windows.Forms.BindingSource zamowienieBindingSource;
         private DomowyFastFoodDataSetTableAdapters.ZamowienieTableAdapter zamowienieTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDZamowieniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDRestauracjiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDKlientaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDelOrder;
     }
 }

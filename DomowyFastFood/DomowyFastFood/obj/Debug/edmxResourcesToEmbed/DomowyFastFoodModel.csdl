@@ -42,6 +42,18 @@
     <NavigationProperty Name="Klient" Relationship="Self.FK_Zamowienie_Klient" FromRole="Zamowienie" ToRole="Klient" />
     <NavigationProperty Name="Restauracja" Relationship="Self.FK_Zamowienie_Restauracja" FromRole="Zamowienie" ToRole="Restauracja" />
   </EntityType>
+  <EntityType Name="Pracownik">
+    <Key>
+      <PropertyRef Name="ID_Pracownika" />
+      <PropertyRef Name="Nick" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Autoryzacja" />
+    </Key>
+    <Property Name="ID_Pracownika" Type="Int32" Nullable="false" />
+    <Property Name="Nick" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Autoryzacja" Type="Int32" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Zamowienie_Klient">
     <End Role="Klient" Type="Self.Klient" Multiplicity="1" />
     <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
@@ -71,6 +83,7 @@
     <EntitySet Name="Restauracjas" EntityType="Self.Restauracja" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Zamowienies" EntityType="Self.Zamowienie" />
+    <EntitySet Name="Pracowniks" EntityType="Self.Pracownik" />
     <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
       <End Role="Klient" EntitySet="Klients" />
       <End Role="Zamowienie" EntitySet="Zamowienies" />

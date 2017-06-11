@@ -11,12 +11,19 @@
     <Property Name="Telefon" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Pracownik">
-          <Property Name="ID_Pracownika" Type="int" />
-          <Property Name="Nick" Type="nvarchar" MaxLength="50" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
+warning 6002: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Pracownik">
+    <Key>
+      <PropertyRef Name="ID_Pracownika" />
+      <PropertyRef Name="Nick" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Autoryzacja" />
+    </Key>
+    <Property Name="ID_Pracownika" Type="int" Nullable="false" />
+    <Property Name="Nick" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Autoryzacja" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Restauracja">
     <Key>
       <PropertyRef Name="ID_Restauracji" />
@@ -74,6 +81,14 @@ warning 6013: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a prim
     <EntitySet Name="Restauracja" EntityType="Self.Restauracja" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownik" EntityType="Self.Pracownik" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Pracownik].[ID_Pracownika] AS [ID_Pracownika], 
+    [Pracownik].[Nick] AS [Nick], 
+    [Pracownik].[Password] AS [Password], 
+    [Pracownik].[Autoryzacja] AS [Autoryzacja]
+    FROM [dbo].[Pracownik] AS [Pracownik]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
       <End Role="Klient" EntitySet="Klient" />
       <End Role="Zamowienie" EntitySet="Zamowienie" />
