@@ -36,6 +36,8 @@ namespace DomowyFastFood
             dt.Columns.Add("Telefon Restauracji");
             dt.AcceptChanges();
 
+          
+
             using (var Context = new DomowyFastFoodContext())
             {
 
@@ -54,6 +56,13 @@ namespace DomowyFastFood
 
                 var filteredClientDatav2 = clientDatav2.AsParallel().Select(x => new {x.Zam2.Zam.ID_Zamowienia,x.Zam2.Client.Nick, x.Zam2.Client.Telefon,x.Restaurant.NazwaRestauracji,x.Restaurant.DanieDnia }).ToList();
                 var filteredRestaurantdata = clientDatav2.AsParallel().Select(x => x.Restaurant.Telefon).ToList();
+
+                foreach (var item in filteredClientDatav2.Zip(filteredRestaurantdata, Tuple.Create))
+                {
+                    dt.Rows.Add(item.Item1.ID_Zamowienia,item.Item1.Nick, item.Item1.Telefon, item.Item1.NazwaRestauracji, item.Item1.DanieDnia, item.Item2);
+                }
+                dt.AcceptChanges();
+                dgvOrder.DataSource = dt;
                 //     // var clientData = Context.Klients.AsParallel().Select(x => new { x.Nick, x.Telefon}).ToList();
                 //     var clientData = Context.Zamowienies    // your starting point - table in the "from" statement
                 //        .Join(Context.Klients, // the source table of the inner join
@@ -74,16 +83,7 @@ namespace DomowyFastFood
                 //   (zam, restaurant) => new { Zam = zam, Restaurant = restaurant }) // selection
                 //.Where(x => x.Zam.ID_Restauracji == x.Restaurant.ID_Restauracji);
                 //     var filteredRestaurantData = restaurantData.AsParallel().Select(x => new { x.Restaurant.NazwaRestauracji,x.Restaurant.DanieDnia ,x.Restaurant.Telefon }).ToList();
-
-                foreach (var item in filteredClientDatav2.Zip(filteredRestaurantdata, Tuple.Create))
-                {
-                    dt.Rows.Add(item.Item1.ID_Zamowienia,item.Item1.Nick, item.Item1.Telefon, item.Item1.NazwaRestauracji, item.Item1.DanieDnia, item.Item2);
-                }
-                dt.AcceptChanges();
-                dgvOrder.DataSource = dt;
-
             }
-
         }
 
         private void btnDelOrder_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace DomowyFastFood
         private void btnRegister_Click(object sender, EventArgs e)
         {
             frmRegister r = new frmRegister();
-            r.Show();
+            r.ShowDialog();
         }
 
         private void btnLog_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace DomowyFastFood
                 {
                     Identity = txtBoxLogin.Text;
                     frmUserControlPanel f = new frmUserControlPanel(Identity);
-                    f.Show();
+                    f.ShowDialog();
                 }
                 else if (Context.Pracowniks.AsParallel().Where(x => x.Nick == txtBoxLogin.Text).Count() > 0
                     && Context.Pracowniks.AsParallel().Where(x => x.Password == txtBoxPassword.Text).Count() > 0)
@@ -43,7 +43,7 @@ namespace DomowyFastFood
                     Authorization = Context.Pracowniks.AsParallel().Where(x => x.Nick == txtBoxLogin.Text).FirstOrDefault().Autoryzacja;
                     Identity = txtBoxLogin.Text;
                     frmAdminControlPanel f = new frmAdminControlPanel(Authorization, Identity);
-                    f.Show();
+                    f.ShowDialog();
                 }
                 else MessageBox.Show("Błąd Logowania", "Niepoprawny login lub hasło", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

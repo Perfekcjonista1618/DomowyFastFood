@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserControlPanel));
             this.dgvRestaurant = new System.Windows.Forms.DataGridView();
+            this.iDRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danieDniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.restauracjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.domowyFastFoodDataSet1 = new DomowyFastFood.DomowyFastFoodDataSet1();
             this.restauracjaTableAdapter = new DomowyFastFood.DomowyFastFoodDataSet1TableAdapters.RestauracjaTableAdapter();
@@ -37,11 +43,6 @@
             this.btnSync = new System.Windows.Forms.Button();
             this.lblSyncTitle = new System.Windows.Forms.Label();
             this.lblSyncInfo = new System.Windows.Forms.Label();
-            this.iDRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.danieDniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet1)).BeginInit();
@@ -51,7 +52,10 @@
             // 
             this.dgvRestaurant.AllowUserToAddRows = false;
             this.dgvRestaurant.AllowUserToDeleteRows = false;
+            this.dgvRestaurant.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRestaurant.AutoGenerateColumns = false;
+            this.dgvRestaurant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRestaurant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRestaurant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDRestauracjiDataGridViewTextBoxColumn,
@@ -64,60 +68,8 @@
             this.dgvRestaurant.Name = "dgvRestaurant";
             this.dgvRestaurant.ReadOnly = true;
             this.dgvRestaurant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRestaurant.Size = new System.Drawing.Size(441, 271);
+            this.dgvRestaurant.Size = new System.Drawing.Size(682, 271);
             this.dgvRestaurant.TabIndex = 0;
-            // 
-            // restauracjaBindingSource
-            // 
-            this.restauracjaBindingSource.DataMember = "Restauracja";
-            this.restauracjaBindingSource.DataSource = this.domowyFastFoodDataSet1;
-            // 
-            // domowyFastFoodDataSet1
-            // 
-            this.domowyFastFoodDataSet1.DataSetName = "DomowyFastFoodDataSet1";
-            this.domowyFastFoodDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // restauracjaTableAdapter
-            // 
-            this.restauracjaTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.Location = new System.Drawing.Point(378, 314);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnOrder.TabIndex = 1;
-            this.btnOrder.Text = "Zamów!";
-            this.btnOrder.UseVisualStyleBackColor = true;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
-            // 
-            // btnSync
-            // 
-            this.btnSync.Location = new System.Drawing.Point(259, 314);
-            this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(75, 23);
-            this.btnSync.TabIndex = 2;
-            this.btnSync.Text = "Synchronizuj";
-            this.btnSync.UseVisualStyleBackColor = true;
-            this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
-            // 
-            // lblSyncTitle
-            // 
-            this.lblSyncTitle.AutoSize = true;
-            this.lblSyncTitle.Location = new System.Drawing.Point(12, 314);
-            this.lblSyncTitle.Name = "lblSyncTitle";
-            this.lblSyncTitle.Size = new System.Drawing.Size(124, 13);
-            this.lblSyncTitle.TabIndex = 3;
-            this.lblSyncTitle.Text = "Ostatnia Synchronizacja:";
-            // 
-            // lblSyncInfo
-            // 
-            this.lblSyncInfo.AutoSize = true;
-            this.lblSyncInfo.Location = new System.Drawing.Point(143, 314);
-            this.lblSyncInfo.Name = "lblSyncInfo";
-            this.lblSyncInfo.Size = new System.Drawing.Size(10, 13);
-            this.lblSyncInfo.TabIndex = 4;
-            this.lblSyncInfo.Text = "-";
             // 
             // iDRestauracjiDataGridViewTextBoxColumn
             // 
@@ -155,17 +107,77 @@
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // restauracjaBindingSource
+            // 
+            this.restauracjaBindingSource.DataMember = "Restauracja";
+            this.restauracjaBindingSource.DataSource = this.domowyFastFoodDataSet1;
+            // 
+            // domowyFastFoodDataSet1
+            // 
+            this.domowyFastFoodDataSet1.DataSetName = "DomowyFastFoodDataSet1";
+            this.domowyFastFoodDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // restauracjaTableAdapter
+            // 
+            this.restauracjaTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOrder.Location = new System.Drawing.Point(619, 318);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnOrder.TabIndex = 1;
+            this.btnOrder.Text = "Zamów!";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // btnSync
+            // 
+            this.btnSync.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSync.Location = new System.Drawing.Point(495, 318);
+            this.btnSync.Name = "btnSync";
+            this.btnSync.Size = new System.Drawing.Size(94, 23);
+            this.btnSync.TabIndex = 2;
+            this.btnSync.Text = "Synchronizuj";
+            this.btnSync.UseVisualStyleBackColor = true;
+            this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
+            // 
+            // lblSyncTitle
+            // 
+            this.lblSyncTitle.AutoSize = true;
+            this.lblSyncTitle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSyncTitle.Location = new System.Drawing.Point(12, 318);
+            this.lblSyncTitle.Name = "lblSyncTitle";
+            this.lblSyncTitle.Size = new System.Drawing.Size(139, 15);
+            this.lblSyncTitle.TabIndex = 3;
+            this.lblSyncTitle.Text = "Ostatnia Synchronizacja:";
+            // 
+            // lblSyncInfo
+            // 
+            this.lblSyncInfo.AutoSize = true;
+            this.lblSyncInfo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSyncInfo.Location = new System.Drawing.Point(160, 318);
+            this.lblSyncInfo.Name = "lblSyncInfo";
+            this.lblSyncInfo.Size = new System.Drawing.Size(11, 15);
+            this.lblSyncInfo.TabIndex = 4;
+            this.lblSyncInfo.Text = "-";
+            // 
             // frmUserControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 361);
+            this.ClientSize = new System.Drawing.Size(706, 363);
             this.Controls.Add(this.lblSyncInfo);
             this.Controls.Add(this.lblSyncTitle);
             this.Controls.Add(this.btnSync);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.dgvRestaurant);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmUserControlPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Domowy Fast Food";
             this.Load += new System.EventHandler(this.UserControlPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurant)).EndInit();

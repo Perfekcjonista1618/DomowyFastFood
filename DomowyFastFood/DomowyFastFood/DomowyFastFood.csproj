@@ -148,6 +148,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmUserControlPanel.resx">
       <DependentUpon>frmUserControlPanel.cs</DependentUpon>
@@ -197,6 +198,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="businessDinnerFront.jpg" />
     <Content Include="DomowyFastFoodModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DomowyFastFoodModel.edmx</DependentUpon>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.txtboxNick = new System.Windows.Forms.TextBox();
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.txtboxAdress = new System.Windows.Forms.TextBox();
@@ -42,73 +43,100 @@
             // 
             // txtboxNick
             // 
-            this.txtboxNick.Location = new System.Drawing.Point(119, 23);
+            this.txtboxNick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxNick.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtboxNick.Location = new System.Drawing.Point(138, 23);
             this.txtboxNick.Name = "txtboxNick";
-            this.txtboxNick.Size = new System.Drawing.Size(100, 20);
+            this.txtboxNick.Size = new System.Drawing.Size(100, 22);
             this.txtboxNick.TabIndex = 1;
             // 
             // txtboxPassword
             // 
-            this.txtboxPassword.Location = new System.Drawing.Point(119, 70);
+            this.txtboxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxPassword.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtboxPassword.Location = new System.Drawing.Point(138, 70);
             this.txtboxPassword.Name = "txtboxPassword";
-            this.txtboxPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtboxPassword.Size = new System.Drawing.Size(100, 22);
             this.txtboxPassword.TabIndex = 2;
             // 
             // txtboxAdress
             // 
-            this.txtboxAdress.Location = new System.Drawing.Point(119, 120);
+            this.txtboxAdress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxAdress.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtboxAdress.Location = new System.Drawing.Point(138, 117);
             this.txtboxAdress.Name = "txtboxAdress";
-            this.txtboxAdress.Size = new System.Drawing.Size(100, 20);
+            this.txtboxAdress.Size = new System.Drawing.Size(100, 22);
             this.txtboxAdress.TabIndex = 3;
             // 
             // txtboxPhone
             // 
-            this.txtboxPhone.Location = new System.Drawing.Point(119, 165);
+            this.txtboxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxPhone.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtboxPhone.Location = new System.Drawing.Point(138, 164);
             this.txtboxPhone.Name = "txtboxPhone";
-            this.txtboxPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtboxPhone.Size = new System.Drawing.Size(100, 22);
             this.txtboxPhone.TabIndex = 4;
             // 
             // lblLogin
             // 
+            this.lblLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(47, 23);
+            this.lblLogin.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLogin.Location = new System.Drawing.Point(66, 23);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(36, 13);
+            this.lblLogin.Size = new System.Drawing.Size(41, 15);
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Login:";
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(47, 70);
+            this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPassword.Location = new System.Drawing.Point(66, 70);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(39, 13);
+            this.lblPassword.Size = new System.Drawing.Size(41, 15);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Hasło:";
             // 
             // lblAdress
             // 
+            this.lblAdress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAdress.AutoSize = true;
-            this.lblAdress.Location = new System.Drawing.Point(47, 120);
+            this.lblAdress.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAdress.Location = new System.Drawing.Point(66, 117);
             this.lblAdress.Name = "lblAdress";
-            this.lblAdress.Size = new System.Drawing.Size(37, 13);
+            this.lblAdress.Size = new System.Drawing.Size(43, 15);
             this.lblAdress.TabIndex = 7;
             this.lblAdress.Text = "Adres:";
             // 
             // lblPhone
             // 
+            this.lblPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(47, 165);
+            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPhone.Location = new System.Drawing.Point(66, 164);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(46, 13);
+            this.lblPhone.Size = new System.Drawing.Size(50, 15);
             this.lblPhone.TabIndex = 8;
             this.lblPhone.Text = "Telefon:";
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(212, 220);
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRegister.Location = new System.Drawing.Point(199, 220);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(88, 23);
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Zarejestruj!";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -116,6 +144,9 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCancel.Location = new System.Drawing.Point(18, 220);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -139,8 +170,12 @@
             this.Controls.Add(this.txtboxAdress);
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.txtboxNick);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmRegister";
-            this.Text = "frmRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registration";
             this.ResumeLayout(false);
             this.PerformLayout();
 

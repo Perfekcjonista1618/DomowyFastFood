@@ -92,7 +92,7 @@ namespace DomowyFastFood
             {
                 var client = Context.Klients.SingleOrDefault(x => x.Nick == Identity);
                 var id = client.ID_Klienta;
-                //var id = int.Parse(dgvBazaSK.Rows[dgvBazaSK.SelectedCells[0].RowIndex].Cells[0].Value.ToString());
+              
                 Context.Zamowienies.Add(new Zamowienie
                 {
                     ID_Zamowienia = Context.Zamowienies.Max(x => x.ID_Zamowienia) + 1,
