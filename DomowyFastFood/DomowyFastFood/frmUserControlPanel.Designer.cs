@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserControlPanel));
             this.dgvRestaurant = new System.Windows.Forms.DataGridView();
-            this.iDRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.danieDniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.restauracjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.domowyFastFoodDataSet1 = new DomowyFastFood.DomowyFastFoodDataSet1();
             this.restauracjaTableAdapter = new DomowyFastFood.DomowyFastFoodDataSet1TableAdapters.RestauracjaTableAdapter();
@@ -43,9 +38,24 @@
             this.btnSync = new System.Windows.Forms.Button();
             this.lblSyncTitle = new System.Windows.Forms.Label();
             this.lblSyncInfo = new System.Windows.Forms.Label();
+            this.domowyFastFoodDataSet2 = new DomowyFastFood.DomowyFastFoodDataSet2();
+            this.restauracjaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.restauracjaTableAdapter1 = new DomowyFastFood.DomowyFastFoodDataSet2TableAdapters.RestauracjaTableAdapter();
+            this.domowyFastFoodDataSet3 = new DomowyFastFood.DomowyFastFoodDataSet3();
+            this.restauracjaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.restauracjaTableAdapter2 = new DomowyFastFood.DomowyFastFoodDataSet3TableAdapters.RestauracjaTableAdapter();
+            this.iDRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaRestauracjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danieDniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRestaurant
@@ -63,49 +73,13 @@
             this.danieDniaDataGridViewTextBoxColumn,
             this.adresDataGridViewTextBoxColumn,
             this.telefonDataGridViewTextBoxColumn});
-            this.dgvRestaurant.DataSource = this.restauracjaBindingSource;
+            this.dgvRestaurant.DataSource = this.restauracjaBindingSource2;
             this.dgvRestaurant.Location = new System.Drawing.Point(12, 12);
             this.dgvRestaurant.Name = "dgvRestaurant";
             this.dgvRestaurant.ReadOnly = true;
             this.dgvRestaurant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRestaurant.Size = new System.Drawing.Size(682, 271);
             this.dgvRestaurant.TabIndex = 0;
-            // 
-            // iDRestauracjiDataGridViewTextBoxColumn
-            // 
-            this.iDRestauracjiDataGridViewTextBoxColumn.DataPropertyName = "ID_Restauracji";
-            this.iDRestauracjiDataGridViewTextBoxColumn.HeaderText = "ID_Restauracji";
-            this.iDRestauracjiDataGridViewTextBoxColumn.Name = "iDRestauracjiDataGridViewTextBoxColumn";
-            this.iDRestauracjiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDRestauracjiDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nazwaRestauracjiDataGridViewTextBoxColumn
-            // 
-            this.nazwaRestauracjiDataGridViewTextBoxColumn.DataPropertyName = "NazwaRestauracji";
-            this.nazwaRestauracjiDataGridViewTextBoxColumn.HeaderText = "NazwaRestauracji";
-            this.nazwaRestauracjiDataGridViewTextBoxColumn.Name = "nazwaRestauracjiDataGridViewTextBoxColumn";
-            this.nazwaRestauracjiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // danieDniaDataGridViewTextBoxColumn
-            // 
-            this.danieDniaDataGridViewTextBoxColumn.DataPropertyName = "DanieDnia";
-            this.danieDniaDataGridViewTextBoxColumn.HeaderText = "DanieDnia";
-            this.danieDniaDataGridViewTextBoxColumn.Name = "danieDniaDataGridViewTextBoxColumn";
-            this.danieDniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adresDataGridViewTextBoxColumn
-            // 
-            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
-            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
-            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
-            this.adresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonDataGridViewTextBoxColumn
-            // 
-            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
-            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // restauracjaBindingSource
             // 
@@ -163,6 +137,70 @@
             this.lblSyncInfo.TabIndex = 4;
             this.lblSyncInfo.Text = "-";
             // 
+            // domowyFastFoodDataSet2
+            // 
+            this.domowyFastFoodDataSet2.DataSetName = "DomowyFastFoodDataSet2";
+            this.domowyFastFoodDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // restauracjaBindingSource1
+            // 
+            this.restauracjaBindingSource1.DataMember = "Restauracja";
+            this.restauracjaBindingSource1.DataSource = this.domowyFastFoodDataSet2;
+            // 
+            // restauracjaTableAdapter1
+            // 
+            this.restauracjaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // domowyFastFoodDataSet3
+            // 
+            this.domowyFastFoodDataSet3.DataSetName = "DomowyFastFoodDataSet3";
+            this.domowyFastFoodDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // restauracjaBindingSource2
+            // 
+            this.restauracjaBindingSource2.DataMember = "Restauracja";
+            this.restauracjaBindingSource2.DataSource = this.domowyFastFoodDataSet3;
+            // 
+            // restauracjaTableAdapter2
+            // 
+            this.restauracjaTableAdapter2.ClearBeforeFill = true;
+            // 
+            // iDRestauracjiDataGridViewTextBoxColumn
+            // 
+            this.iDRestauracjiDataGridViewTextBoxColumn.DataPropertyName = "ID_Restauracji";
+            this.iDRestauracjiDataGridViewTextBoxColumn.HeaderText = "ID_Restauracji";
+            this.iDRestauracjiDataGridViewTextBoxColumn.Name = "iDRestauracjiDataGridViewTextBoxColumn";
+            this.iDRestauracjiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDRestauracjiDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazwaRestauracjiDataGridViewTextBoxColumn
+            // 
+            this.nazwaRestauracjiDataGridViewTextBoxColumn.DataPropertyName = "NazwaRestauracji";
+            this.nazwaRestauracjiDataGridViewTextBoxColumn.HeaderText = "NazwaRestauracji";
+            this.nazwaRestauracjiDataGridViewTextBoxColumn.Name = "nazwaRestauracjiDataGridViewTextBoxColumn";
+            this.nazwaRestauracjiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // danieDniaDataGridViewTextBoxColumn
+            // 
+            this.danieDniaDataGridViewTextBoxColumn.DataPropertyName = "DanieDnia";
+            this.danieDniaDataGridViewTextBoxColumn.HeaderText = "DanieDnia";
+            this.danieDniaDataGridViewTextBoxColumn.Name = "danieDniaDataGridViewTextBoxColumn";
+            this.danieDniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // adresDataGridViewTextBoxColumn
+            // 
+            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
+            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
+            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
+            this.adresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonDataGridViewTextBoxColumn
+            // 
+            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
+            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmUserControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +221,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domowyFastFoodDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restauracjaBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +240,12 @@
         private System.Windows.Forms.Button btnSync;
         private System.Windows.Forms.Label lblSyncTitle;
         private System.Windows.Forms.Label lblSyncInfo;
+        private DomowyFastFoodDataSet2 domowyFastFoodDataSet2;
+        private System.Windows.Forms.BindingSource restauracjaBindingSource1;
+        private DomowyFastFoodDataSet2TableAdapters.RestauracjaTableAdapter restauracjaTableAdapter1;
+        private DomowyFastFoodDataSet3 domowyFastFoodDataSet3;
+        private System.Windows.Forms.BindingSource restauracjaBindingSource2;
+        private DomowyFastFoodDataSet3TableAdapters.RestauracjaTableAdapter restauracjaTableAdapter2;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDRestauracjiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaRestauracjiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn danieDniaDataGridViewTextBoxColumn;

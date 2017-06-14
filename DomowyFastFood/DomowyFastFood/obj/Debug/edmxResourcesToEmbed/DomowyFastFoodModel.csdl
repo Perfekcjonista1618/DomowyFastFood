@@ -37,8 +37,10 @@
       <PropertyRef Name="ID_Zamowienia" />
     </Key>
     <Property Name="ID_Zamowienia" Type="Int32" Nullable="false" />
-    <Property Name="ID_Restauracji" Type="Int32" Nullable="false" />
     <Property Name="ID_Klienta" Type="Int32" Nullable="false" />
+    <Property Name="ID_Restauracji" Type="Int32" Nullable="false" />
+    <Property Name="DanieDnia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DataZamowienia" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Klient" Relationship="Self.FK_Zamowienie_Klient" FromRole="Zamowienie" ToRole="Klient" />
     <NavigationProperty Name="Restauracja" Relationship="Self.FK_Zamowienie_Restauracja" FromRole="Zamowienie" ToRole="Restauracja" />
   </EntityType>

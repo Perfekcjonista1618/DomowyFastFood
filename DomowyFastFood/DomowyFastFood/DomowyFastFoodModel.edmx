@@ -54,8 +54,10 @@ warning 6002: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a prim
             <PropertyRef Name="ID_Zamowienia" />
           </Key>
           <Property Name="ID_Zamowienia" Type="int" Nullable="false" />
-          <Property Name="ID_Restauracji" Type="int" Nullable="false" />
           <Property Name="ID_Klienta" Type="int" Nullable="false" />
+          <Property Name="ID_Restauracji" Type="int" Nullable="false" />
+          <Property Name="DanieDnia" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DataZamowienia" Type="date" Nullable="false" />
         </EntityType>
         <Association Name="FK_Zamowienie_Klient">
           <End Role="Klient" Type="Self.Klient" Multiplicity="1" />
@@ -145,8 +147,10 @@ warning 6002: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a prim
             <PropertyRef Name="ID_Zamowienia" />
           </Key>
           <Property Name="ID_Zamowienia" Type="Int32" Nullable="false" />
-          <Property Name="ID_Restauracji" Type="Int32" Nullable="false" />
           <Property Name="ID_Klienta" Type="Int32" Nullable="false" />
+          <Property Name="ID_Restauracji" Type="Int32" Nullable="false" />
+          <Property Name="DanieDnia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataZamowienia" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Klient" Relationship="Self.FK_Zamowienie_Klient" FromRole="Zamowienie" ToRole="Klient" />
           <NavigationProperty Name="Restauracja" Relationship="Self.FK_Zamowienie_Restauracja" FromRole="Zamowienie" ToRole="Restauracja" />
         </EntityType>
@@ -244,8 +248,10 @@ warning 6002: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a prim
             <EntityTypeMapping TypeName="DomowyFastFoodModel.Zamowienie">
               <MappingFragment StoreEntitySet="Zamowienie">
                 <ScalarProperty Name="ID_Zamowienia" ColumnName="ID_Zamowienia" />
-                <ScalarProperty Name="ID_Restauracji" ColumnName="ID_Restauracji" />
                 <ScalarProperty Name="ID_Klienta" ColumnName="ID_Klienta" />
+                <ScalarProperty Name="ID_Restauracji" ColumnName="ID_Restauracji" />
+                <ScalarProperty Name="DanieDnia" ColumnName="DanieDnia" />
+                <ScalarProperty Name="DataZamowienia" ColumnName="DataZamowienia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -15,8 +15,10 @@ namespace DomowyFastFood
     public partial class Zamowienie
     {
         public int ID_Zamowienia { get; set; }
-        public int ID_Restauracji { get; set; }
         public int ID_Klienta { get; set; }
+        public int ID_Restauracji { get; set; }
+        public string DanieDnia { get; set; }
+        public System.DateTime DataZamowienia { get; set; }
     
         public virtual Klient Klient { get; set; }
         public virtual Restauracja Restauracja { get; set; }

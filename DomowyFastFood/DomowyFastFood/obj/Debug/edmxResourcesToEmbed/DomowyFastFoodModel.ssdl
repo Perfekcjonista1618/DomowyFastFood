@@ -49,8 +49,10 @@ warning 6002: The table/view 'DomowyFastFood.dbo.Pracownik' does not have a prim
       <PropertyRef Name="ID_Zamowienia" />
     </Key>
     <Property Name="ID_Zamowienia" Type="int" Nullable="false" />
-    <Property Name="ID_Restauracji" Type="int" Nullable="false" />
     <Property Name="ID_Klienta" Type="int" Nullable="false" />
+    <Property Name="ID_Restauracji" Type="int" Nullable="false" />
+    <Property Name="DanieDnia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataZamowienia" Type="date" Nullable="false" />
   </EntityType>
   <Association Name="FK_Zamowienie_Klient">
     <End Role="Klient" Type="Self.Klient" Multiplicity="1" />

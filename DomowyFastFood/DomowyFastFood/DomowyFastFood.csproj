@@ -75,6 +75,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DomowyFastFoodDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DomowyFastFoodDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DomowyFastFoodDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DomowyFastFoodDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DomowyFastFoodDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DomowyFastFoodModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,10 +186,32 @@
     <None Include="DomowyFastFoodDataSet1.xss">
       <DependentUpon>DomowyFastFoodDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DomowyFastFoodDataSet2.xsc">
+      <DependentUpon>DomowyFastFoodDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DomowyFastFoodDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DomowyFastFoodDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DomowyFastFoodDataSet2.xss">
+      <DependentUpon>DomowyFastFoodDataSet2.xsd</DependentUpon>
+    </None>
     <EntityDeploy Include="DomowyFastFoodModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DomowyFastFoodModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DomowyFastFoodDataSet3.xsc">
+      <DependentUpon>DomowyFastFoodDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DomowyFastFoodDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DomowyFastFoodDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DomowyFastFoodDataSet3.xss">
+      <DependentUpon>DomowyFastFoodDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="DomowyFastFoodModel.edmx.diagram">
       <DependentUpon>DomowyFastFoodModel.edmx</DependentUpon>
     </None>
@@ -199,6 +231,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="businessDinnerFront.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DomowyFastFoodModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DomowyFastFoodModel.edmx</DependentUpon>

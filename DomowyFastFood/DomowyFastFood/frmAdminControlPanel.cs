@@ -24,8 +24,7 @@ namespace DomowyFastFood
 
         private void frmAdminControlPanel_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'domowyFastFoodDataSet.Zamowienie' table. You can move, or remove it, as needed.
-            this.zamowienieTableAdapter.Fill(this.domowyFastFoodDataSet.Zamowienie);
+          
 
             DataTable dt = new DataTable();
             dt.Columns.Add("ID_Zamowienia");
@@ -34,6 +33,7 @@ namespace DomowyFastFood
             dt.Columns.Add("Nazwa Restauracji");
             dt.Columns.Add("Danie Dnia");
             dt.Columns.Add("Telefon Restauracji");
+            dt.Columns.Add("Data Zamowienia");
             dt.AcceptChanges();
 
           
@@ -54,12 +54,13 @@ namespace DomowyFastFood
            .Where(x => x.Zam2.Zam.ID_Restauracji == x.Restaurant.ID_Restauracji);
 
 
-                var filteredClientDatav2 = clientDatav2.AsParallel().Select(x => new {x.Zam2.Zam.ID_Zamowienia,x.Zam2.Client.Nick, x.Zam2.Client.Telefon,x.Restaurant.NazwaRestauracji,x.Restaurant.DanieDnia }).ToList();
+                var filteredClientDatav2 = clientDatav2.AsParallel().Select(x => new {x.Zam2.Zam.ID_Zamowienia,x.Zam2.Client.Nick, x.Zam2.Client.Telefon,x.Restaurant.NazwaRestauracji, x.Zam2.Zam.DanieDnia, x.Zam2.Zam.DataZamowienia}).ToList();
                 var filteredRestaurantdata = clientDatav2.AsParallel().Select(x => x.Restaurant.Telefon).ToList();
+                var orderDate = Context.Zamowienies.Select(x => x.DataZamowienia).ToList();
 
                 foreach (var item in filteredClientDatav2.Zip(filteredRestaurantdata, Tuple.Create))
                 {
-                    dt.Rows.Add(item.Item1.ID_Zamowienia,item.Item1.Nick, item.Item1.Telefon, item.Item1.NazwaRestauracji, item.Item1.DanieDnia, item.Item2);
+                    dt.Rows.Add(item.Item1.ID_Zamowienia,item.Item1.Nick, item.Item1.Telefon, item.Item1.NazwaRestauracji, item.Item1.DanieDnia, item.Item2, item.Item1.DataZamowienia);
                 }
                 dt.AcceptChanges();
                 dgvOrder.DataSource = dt;

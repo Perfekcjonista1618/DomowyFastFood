@@ -54,6 +54,7 @@
             this.txtBoxPassword.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtBoxPassword.Location = new System.Drawing.Point(103, 89);
             this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(100, 22);
             this.txtBoxPassword.TabIndex = 1;
             // 

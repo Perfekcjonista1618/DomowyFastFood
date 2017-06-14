@@ -38,8 +38,10 @@
       <EntityTypeMapping TypeName="DomowyFastFoodModel.Zamowienie">
         <MappingFragment StoreEntitySet="Zamowienie">
           <ScalarProperty Name="ID_Zamowienia" ColumnName="ID_Zamowienia" />
-          <ScalarProperty Name="ID_Restauracji" ColumnName="ID_Restauracji" />
           <ScalarProperty Name="ID_Klienta" ColumnName="ID_Klienta" />
+          <ScalarProperty Name="ID_Restauracji" ColumnName="ID_Restauracji" />
+          <ScalarProperty Name="DanieDnia" ColumnName="DanieDnia" />
+          <ScalarProperty Name="DataZamowienia" ColumnName="DataZamowienia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
